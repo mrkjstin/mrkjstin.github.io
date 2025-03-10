@@ -4,11 +4,13 @@ import {
   DisclosurePanel,
 } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
+import { Link } from "react-router"
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
-  { name: "Projects", href: "#", current: false },
-  { name: "About", href: "#", current: false },
+  { name: "Home", href: "/", current: true },
+  { name: "About Me", href: "/about-me", current: false },
+  { name: "Projects", href: "/projects", current: false },
+  { name: "My Tech Stack", href: "/tech-stack", current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -17,12 +19,14 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <Disclosure
+      as="nav"
+      className="dark:bg-zinc-900 bg-zinc-200 w-full sticky top-0 z-50"
+    >
+      <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-zinc-800 hover:bg-zinc-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon
@@ -39,23 +43,31 @@ export default function Navbar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
+                        ? "dark:text-zinc-200 underline"
+                        : "dark:text-zinc-200 text-zinc-800 hover:underline",
+                      "rounded-md px-3 py-2 text-md font-medium"
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
+          <button
+            className="p-1.5 rounded-full bg-gradient-to-r from-amber-500 to-red-600 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+            onClick={() =>
+              (window.location.href = "mailto:your-email@example.com")
+            }
+          >
+            Shoot me an email
+          </button>
         </div>
       </div>
 
@@ -69,8 +81,8 @@ export default function Navbar() {
               aria-current={item.current ? "page" : undefined}
               className={classNames(
                 item.current
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                  ? "bg-zinc-900 text-white"
+                  : "text-zinc-800 hover:bg-zinc-700 hover:text-white",
                 "block rounded-md px-3 py-2 text-base font-medium"
               )}
             >
