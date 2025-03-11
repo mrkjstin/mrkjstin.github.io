@@ -4,7 +4,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import { Link, NavLink, Outlet } from "react-router"
+import { NavLink } from "react-router"
 
 const navigation = [
   { name: "Home", href: "/", current: true },
