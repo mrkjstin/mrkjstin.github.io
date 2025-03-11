@@ -64,7 +64,7 @@ const Navbar = () => {
             <button
               className="p-1.5 rounded-full bg-gradient-to-r from-zinc-400 to-slate-400 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
               onClick={() =>
-                (window.location.href = "mailto:your-email@example.com")
+                (window.location.href = "mailto:mrkjstn.dinglasan@gmail.com")
               }
             >
               Shoot me an email
