@@ -4,7 +4,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import { Link } from "react-router"
+import { Link, NavLink, Outlet } from "react-router"
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -17,80 +17,83 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ")
 }
 
-export default function Navbar() {
+const Navbar = () => {
   return (
-    <Disclosure
-      as="nav"
-      className="dark:bg-zinc-900 bg-zinc-200 w-full sticky top-0 z-50"
-    >
-      <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-zinc-800 hover:bg-zinc-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block size-6 group-data-open:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden size-6 group-data-open:block"
-              />
-            </DisclosureButton>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "dark:text-zinc-200 underline"
-                        : "dark:text-zinc-200 text-zinc-800 hover:underline",
-                      "rounded-md px-3 py-2 text-md font-medium"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+    <>
+      <Disclosure
+        as="nav"
+        className="dark:bg-zinc-900 bg-zinc-200 top-0 sticky z-50"
+      >
+        <div className="mx-auto max-w-5xl px-2 sm:px-6 lg:px-8">
+          <div className="relative flex h-16 items-center justify-between">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-zinc-800 hover:bg-zinc-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
+                <span className="absolute -inset-0.5" />
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon
+                  aria-hidden="true"
+                  className="block size-6 group-data-open:hidden"
+                />
+                <XMarkIcon
+                  aria-hidden="true"
+                  className="hidden size-6 group-data-open:block"
+                />
+              </DisclosureButton>
+            </div>
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="hidden sm:ml-6 sm:block">
+                <div className="flex space-x-4">
+                  {navigation.map((item) => (
+                    <NavLink
+                      key={item.name}
+                      to={item.href}
+                      aria-current={item.current ? "page" : undefined}
+                      className={classNames(
+                        item.current
+                          ? "dark:text-zinc-200 underline"
+                          : "dark:text-zinc-200 text-zinc-800 hover:underline",
+                        "rounded-md px-3 py-2 text-md font-medium"
+                      )}
+                    >
+                      {item.name}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            className="p-1.5 rounded-full bg-gradient-to-r from-amber-500 to-red-600 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
-            onClick={() =>
-              (window.location.href = "mailto:your-email@example.com")
-            }
-          >
-            Shoot me an email
-          </button>
-        </div>
-      </div>
-
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                item.current
-                  ? "bg-zinc-900 text-white"
-                  : "text-zinc-800 hover:bg-zinc-700 hover:text-white",
-                "block rounded-md px-3 py-2 text-base font-medium"
-              )}
+            <button
+              className="p-1.5 rounded-full bg-gradient-to-r from-zinc-400 to-slate-400 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+              onClick={() =>
+                (window.location.href = "mailto:your-email@example.com")
+              }
             >
-              {item.name}
-            </DisclosureButton>
-          ))}
+              Shoot me an email
+            </button>
+          </div>
         </div>
-      </DisclosurePanel>
-    </Disclosure>
+
+        <DisclosurePanel className="sm:hidden">
+          <div className="space-y-1 px-2 pt-2 pb-3">
+            {navigation.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                aria-current={item.current ? "page" : undefined}
+                className={classNames(
+                  item.current
+                    ? "bg-zinc-900 text-white"
+                    : "text-zinc-800 hover:bg-zinc-700 hover:text-white",
+                  "block rounded-md px-3 py-2 text-base font-medium"
+                )}
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </div>
+        </DisclosurePanel>
+      </Disclosure>
+    </>
   )
 }
+
+export default Navbar

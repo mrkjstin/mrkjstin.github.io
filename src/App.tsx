@@ -6,11 +6,13 @@ import Layout from "./layouts/Layout"
 import About from "./pages/About"
 import Projects from "./pages/Projects"
 import TechStack from "./pages/TechStack"
+import Navbar from "./componenets/Navbar"
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
