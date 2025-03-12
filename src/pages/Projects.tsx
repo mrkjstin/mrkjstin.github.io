@@ -43,7 +43,7 @@ const Projects = () => {
 
         <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75">
           <span className="text-zinc-800 text-md font-semibold">
-            CCK HRIS V1
+            Human Resources Information System V1
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, Laravel Blade, Bootstrap, and MySQL
             </p>
@@ -71,7 +71,7 @@ const Projects = () => {
 
         <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 ">
           <span className="text-zinc-800 text-md font-semibold">
-            CCK HRIS V2
+            Human Resources Information System V2
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, Inertia.js, Vue 3, Tailwind CSS, and MySQL
             </p>
@@ -109,7 +109,7 @@ const Projects = () => {
 
         <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 ">
           <span className="text-zinc-800 text-md font-semibold">
-            CCK Inventory System V1
+            Inventory System V1
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, Inertia.js, Vue 3, Tailwind CSS, and MySQL
             </p>
@@ -147,7 +147,7 @@ const Projects = () => {
 
         <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 ">
           <span className="text-zinc-800 text-md font-semibold">
-            CCK Inventory System V2
+            Inventory System V2
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, Inertia.js, Vue 3, Tailwind CSS, and MySQL
             </p>
@@ -190,7 +190,7 @@ const Projects = () => {
 
         <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 ">
           <span className="text-zinc-800 text-md font-semibold">
-            CCK Announcement System V2
+            Announcement System V2
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, Inertia.js, Vue 3, Tailwind CSS, and MySQL
             </p>
@@ -231,8 +231,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 blur-xs">
-          <span className="text-zinc-800 text-md font-semibold">
+        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 ">
+          <span className="text-zinc-800 text-md font-semibold blur-xs">
             Casino Back Office
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, React.js, Material UI, RabbitMQ
@@ -264,8 +264,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 blur-xs ">
-          <span className="text-zinc-800 text-md font-semibold">
+        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75  ">
+          <span className="text-zinc-800 text-md font-semibold blur-xs">
             Casino Client Side
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, React.js, Material UI, RabbitMQ
@@ -297,8 +297,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 blur-xs ">
-          <span className="text-zinc-800 text-md font-semibold">
+        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75  ">
+          <span className="text-zinc-800 text-md font-semibold blur-xs">
             Casino Agent Side
             <p className="text-zinc-500 text-sm font-normal">
               Built with Laravel, React.js, Vite.js, Go, MySQL
@@ -335,8 +335,8 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75 blur-xs ">
-          <span className="text-zinc-800 text-md font-semibold">
+        <div className="flex flex-col p-5 rounded-md drop-shadow-xl bg-zinc-100 space-y-2 gap-2 hover:scale-105 transition-all delay-75  ">
+          <span className="text-zinc-800 text-md font-semibold blur-xs">
             Casino Reporting Service
             <p className="text-zinc-500 text-sm font-normal">
               Built with Go, Gin, GORM, MySQL
