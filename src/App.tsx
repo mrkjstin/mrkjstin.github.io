@@ -1,5 +1,5 @@
 import "./App.css"
-import { BrowserRouter, Route, Routes } from "react-router"
+import { HashRouter, Route, Routes } from "react-router"
 
 import Home from "./pages/Home"
 import Layout from "./layouts/Layout"
@@ -11,7 +11,7 @@ import Navbar from "./componenets/Navbar"
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <Routes>
           <Route element={<Layout />}>
@@ -22,7 +22,7 @@ function App() {
           </Route>
           <Route path="*" element={<div>404 Not Found</div>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   )
 }

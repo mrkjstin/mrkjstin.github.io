@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import { NavLink } from "react-router"
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
+  { name: "Home", href: "/", current: false },
   { name: "About Me", href: "/about-me", current: false },
   { name: "Projects", href: "/projects", current: false },
   { name: "My Tech Stack", href: "/tech-stack", current: false },
@@ -32,11 +32,11 @@ const Navbar = () => {
                 <span className="sr-only">Open main menu</span>
                 <Bars3Icon
                   aria-hidden="true"
-                  className="block size-6 group-data-open:hidden"
+                  className="block size-6 group-data-open:hidden dark:text-zinc-200"
                 />
                 <XMarkIcon
                   aria-hidden="true"
-                  className="hidden size-6 group-data-open:block"
+                  className="hidden size-6 group-data-open:block dark:text-zinc-200"
                 />
               </DisclosureButton>
             </div>
@@ -62,34 +62,37 @@ const Navbar = () => {
               </div>
             </div>
             <button
-              className="p-1.5 rounded-full bg-gradient-to-r from-zinc-400 to-slate-400 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+              className="p-1.5 rounded bg-gradient-to-r from-red-400 to-orange-400 dark:text-zinc-100 text-zinc-200 hover:from-red-600 hover:to-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
               onClick={() =>
                 (window.location.href = "mailto:mrkjstn.dinglasan@gmail.com")
               }
             >
-              Shoot me an email
+              Open a ticket 🎫
             </button>
           </div>
         </div>
 
         <DisclosurePanel className="sm:hidden">
-          <div className="space-y-1 px-2 pt-2 pb-3">
-            {navigation.map((item) => (
-              <NavLink
-                key={item.name}
-                to={item.href}
-                aria-current={item.current ? "page" : undefined}
-                className={classNames(
-                  item.current
-                    ? "bg-zinc-900 text-white"
-                    : "text-zinc-800 hover:bg-zinc-700 hover:text-white",
-                  "block rounded-md px-3 py-2 text-base font-medium"
-                )}
-              >
-                {item.name}
-              </NavLink>
-            ))}
-          </div>
+          {({ close }) => (
+            <div className="space-y-1 px-2 pt-2 pb-3">
+              {navigation.map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => close()}
+                  aria-current={item.current ? "page" : undefined}
+                  className={classNames(
+                    item.current
+                      ? "bg-zinc-400 text-zinc-100 dark:text-zinc-200 dark:bg-zinc-700"
+                      : "text-zinc-800 hover:bg-zinc-700 hover:text-white dark:text-zinc-400",
+                    "block rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                >
+                  {item.name}
+                </NavLink>
+              ))}
+            </div>
+          )}
         </DisclosurePanel>
       </Disclosure>
     </>
