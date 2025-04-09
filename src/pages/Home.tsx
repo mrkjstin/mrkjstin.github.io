@@ -52,7 +52,7 @@ const Home = () => {
           LinkedIn
         </a>
         <a
-          href="https://github.com/mrkjstn1"
+          href="https://github.com/mrkjstin"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-gray-600 transition-colors"
