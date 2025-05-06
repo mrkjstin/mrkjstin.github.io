@@ -64,7 +64,7 @@ const Home = () => {
         </a>
 
         <a
-          href="src/assets/MJ_DINGLASAN_2_11_25.pdf"
+          href="https://github.io/src/assets/MJ_DINGLASAN_2_11_25.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-blue-600 transition-colors"
